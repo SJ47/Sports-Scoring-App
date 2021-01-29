@@ -1,13 +1,15 @@
 -- File to create database tables by running "psql -d sports_scoring_app -f sports_scoring_app.sql"
 
-DROP TABLE leagues;
-DROP TABLE teams;
-DROP TABLE players;
 DROP TABLE fixtures;
+DROP TABLE players;
+DROP TABLE teams;
+DROP TABLE leagues;
+
 
 CREATE TABLE leagues (
   id SERIAL PRIMARY KEY,
-  league_name VARCHAR(255)
+  league_name VARCHAR(255),
+  league_size INT
 );
 
 CREATE TABLE teams (
