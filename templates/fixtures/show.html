@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- Display teams in the league -->
+<table>
+    <tr>
+        <th>Home Team Name</th>
+        <th>vs</th>
+        <th>Away Team Name</th>
+        <th>Fixture Date</th>
+        <th>Fixture Result</th>
+    </tr>
+    {% for fixture in fixtures %}
+    <tr>
+        <td>{{fixture.home_team_id}}</td>
+        <td>vs</td>
+        <td>{{fixture.away_team_id}}</td>
+        <td>{{fixture.fixture_date}}</td>
+        <td>{{fixture.fixture_result}}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+{% endblock %}

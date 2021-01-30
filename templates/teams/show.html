@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div>
+    <p>{{team.team_name}}</p>
+    <hr>
+
+    <p><a href="/teams/{{team.id}}/edit">Edit</a></p>
+</div>
+{% endblock %}

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Leagues</h1>
+<p>Please select a league</p>
+
+{% for league in leagues %}
+<p><a href="/leagues/{{ league.id }}"> Name: {{league.league_name}} </a> -- Number of Teams in League:
+    {{league.league_size}}</p>
+
+{% endfor %}
+
+{% endblock %}

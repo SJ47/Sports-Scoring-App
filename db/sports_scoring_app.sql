@@ -30,8 +30,8 @@ CREATE TABLE players(
 
 CREATE TABLE fixtures(
   id SERIAL PRIMARY KEY,
-  team_home_id INT REFERENCES teams(id),
-  team_away_id INT REFERENCES teams(id),
+  home_team_id INT REFERENCES teams(id),
+  away_team_id INT REFERENCES teams(id),
   fixture_date DATE,
   fixture_result VARCHAR(7),
   league_id INT REFERENCES leagues(id)

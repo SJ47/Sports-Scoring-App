@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3>Update team in league</h3>
+<form action="/teams/{{team.id}}" method="post">
+    <div>
+        <input type="text" id="team_name" value="{{team.team_name}}" name="team_name" required autofocus>
+    </div>
+
+    <input type="submit" value="Confirm Edit">
+</form>
+
+<br>
+<p> <a href="/leagues">Exit Admin</a> </p>
+{% endblock %}
