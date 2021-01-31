@@ -6,7 +6,7 @@ from models.team import Team
 from models.fixture import Fixture
 from models.stat import Stat
 
-def generate_stats(teams):
+def generate_stats(teams, fixtures):
     stats = []
 
     for team in teams:

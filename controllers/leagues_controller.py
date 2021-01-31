@@ -8,6 +8,7 @@ from flask import Blueprint
 import repositories.league_repository as league_repository
 import repositories.team_repository as team_repository
 import repositories.stat_repository as stat_repository
+import repositories.fixture_repository as fixture_repository
 
 # Create a new instance of Blueprint called "leagues"
 leagues_blueprint = Blueprint("leagues", __name__)
@@ -16,7 +17,8 @@ leagues_blueprint = Blueprint("leagues", __name__)
 @leagues_blueprint.route("/leagues")
 def leagues():
     teams = team_repository.select_all()
-    stats = stat_repository.generate_stats(teams)
+    fixtures = fixture_repository.select_all()
+    stats = stat_repository.generate_stats(teams, fixtures)
     return render_template("leagues/show.html", teams = teams, stats = stats)
 
 
