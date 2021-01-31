@@ -22,13 +22,13 @@ def fixures():
 
     return render_template("fixtures/index.html", fixtures=fixtures, teams = teams)
 
-# Declare a route for the list of fixtures and display them
-# @fixtures_blueprint.route("/fixtures/maintenance")
-# def fixure_maintenance():
-#     fixtures = fixture_repository.select_all()
-#     teams = team_repository.select_all()
+# Route for showing fixtures
+@fixtures_blueprint.route("/fixtures/show", methods=["GET"])
+def show_fixtures():
+    fixtures = fixture_repository.select_all()
+    teams = team_repository.select_all()
 
-#     return render_template("fixtures/maintenance.html", fixtures=fixtures, teams = teams)
+    return render_template("fixtures/show.html", fixtures=fixtures, teams = teams)
 
 # Route for adding fixture to league
 @fixtures_blueprint.route("/fixtures/new", methods=["GET"])
