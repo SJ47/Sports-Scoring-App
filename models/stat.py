@@ -10,5 +10,5 @@ class Stat:
         self.points = points
         self.id = id
 
-    def calculate_stats(self):
+    def calculate_stats(self, team_id):
         pass

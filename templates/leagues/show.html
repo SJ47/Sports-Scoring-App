@@ -25,9 +25,15 @@
     <tr>
         <td>{{team.id}}</td>
         <td>{{team.team_name}}</td>
-        <!-- <td>{{team.league_id}}</td> -->
+        {% for stat in stats %}
+        <td>
+            {{stats[stat]}}
+            {% endfor %}
+        </td>
     </tr>
     {% endfor %}
+
+
 </table>
 
 
