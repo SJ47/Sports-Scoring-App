@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Fixture Maintenance</h1>
+<p> <a href="/admin">Exit Fixture Maintenance</a> </p>
+
+<form class="delete-form" action="/fixtures/{{fixtures.id}}/delete" method="POST">
+    <table>
+        <tr>
+            <th>Home Team Name</th>
+            <th>vs</th>
+            <th>Away Team Name</th>
+            <th>Fixture Date</th>
+            <th>Fixture Result</th>
+        </tr>
+        {% for fixture in fixtures %}
+        <tr>
+            <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
+            <td>{{fixture.home_team_id}}</td>
+            <td>vs</td>
+            <td>{{fixture.away_team_id}}</td>
+            <td>{{fixture.fixture_date}}</td>
+            <td>{{fixture.fixture_result}}</td>
+        </tr>
+</form>
+{% endfor %}
+</table>
+
+<br>
+<p><a href="/fixtures/new">Add New Fixture</a></p>
+
+{% endblock %}

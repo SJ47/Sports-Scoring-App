@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Add fixture to league</h3>
+<form action="/fixtures" method="post">
+    <input type="text" id="home_tead_id" name="home_team_id" placeholder="home_team_id" required autofocus>
+
+    <input type="text" id="away_tead_id" name="away_team_id" placeholder="away_team_id" required>
+
+    <input type="text" id="fixture_date" name="fixture_date" placeholder="fixture_date" required>
+
+    <input type="submit" value="Add Fixture">
+</form>
+
+<br>
+<p> <a href="/leagues">Exit Admin</a> </p>
+{% endblock %}

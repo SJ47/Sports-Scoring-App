@@ -17,3 +17,11 @@ def select_all():
         fixtures.append(fixture)
 
     return fixtures
+
+# Save fixture
+def save(fixture):
+    sql = "INSERT INTO fixtures(home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES ( %s, %s, %s, %s, %s ) RETURNING id"
+    values = [fixture.home_team_id, fixture.away_team_id, fixture.fixture_date, fixture.fixture_result, fixture.league_id]
+    results = run_sql( sql, values )
+    fixture.id = results[0]['id']
+    return fixture
