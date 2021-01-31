@@ -41,13 +41,19 @@ def delete_team(id):
     team_repository.delete(id)
     return redirect('/teams')
 
-
+# EDIT
+# GET 'teams/<id>/edit' 
+@teams_blueprint.route("/teams/<id>/edit", methods=['GET'])
+def edit_team(id):
+    team = team_repository.select(id)
+    return render_template('teams/edit.html', team=team)
+    
 # UPDATE
 # PUT '/teams/<id>'
-# @teams_blueprint.route("/teams/<id>", methods=["POST"])
-# def update_team(id):
-#     team_name = request.form['team_name']
-#     league_id = 1
-#     team = Team(team_name, league_id)
-#     team_repository.update(team)
-#     return redirect('/teams')
+@teams_blueprint.route("/teams/<id>", methods=['POST'])
+def update_team(id):
+    team_name = request.form['team_name']
+    league_id = 1
+    team = Team(team_name, league_id)
+    team_repository.update(team)
+    return redirect('/teams')
