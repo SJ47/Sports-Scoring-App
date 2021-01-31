@@ -12,28 +12,20 @@
         <th>Fixture Date</th>
         <th>Fixture Result</th>
     </tr>
-    {% for fixture in all_fixtures %}
-    <tr>
-        <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
-        <td>{{fixture.home_team_id}}</td>
-        <td>vs</td>
-        <td>{{fixture.away_team_id}}</td>
-        <td>{{fixture.fixture_date}}</td>
-        <td>{{fixture.fixture_result}}</td>
-    </tr>
+
+    {% for fixture in fixtures %}
+    <form class="delete-form" action="/fixtures/{{fixture.id}}/delete" method="POST">
+        <tr>
+            <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
+            <td>{{fixture.home_team_id}}</td>
+            <td>vs</td>
+            <td>{{fixture.away_team_id}}</td>
+            <td>{{fixture.fixture_date}}</td>
+            <td>{{fixture.fixture_result}}</td>
+        </tr>
+    </form>
     {% endfor %}
 </table>
-
-
-
-<!-- <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST"> -->
-<button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button>
-
-<!-- {{team.team_name}} <a href="/teams/edit">Edit</a> -->
-<!-- {{team.team_name}} <a href="/teams/{{team.id}}">Edit</a> -->
-<!-- <button class="edit-button"><i class="fas fa-edit fa-1x"></i></button> -->
-</form>
-<!-- {{team.team_name}} <a href="/teams/edit">Edit</a> -->
 
 <br>
 <p><a href="/fixtures/new">Add New Fixture</a></p>

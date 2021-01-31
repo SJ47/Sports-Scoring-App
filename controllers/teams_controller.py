@@ -35,7 +35,7 @@ def create_team():
     return redirect('/teams')
 
 # DELETE
-# DELETE '/tasks/<id>'
+# DELETE '/teams/<id>'
 @teams_blueprint.route("/teams/<id>/delete", methods=['POST'])
 def delete_team(id):
     team_repository.delete(id)
@@ -43,11 +43,11 @@ def delete_team(id):
 
 
 # UPDATE
-# PUT '/tasks/<id>'
-@teams_blueprint.route("/teams/<id>", methods=["POST"])
-def update_team(id):
-    team_name = request.form['team_name']
-    league_id = 1
-    team = Team(team_name, league_id)
-    team_repository.update(team)
-    return redirect('/teams')
+# PUT '/teams/<id>'
+# @teams_blueprint.route("/teams/<id>", methods=["POST"])
+# def update_team(id):
+#     team_name = request.form['team_name']
+#     league_id = 1
+#     team = Team(team_name, league_id)
+#     team_repository.update(team)
+#     return redirect('/teams')

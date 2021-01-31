@@ -2,33 +2,8 @@ from db.run_sql import run_sql
 from models.league import League
 from models.team import Team
 
-# Select all leagues
-# def select_all():
-#     leagues = []
 
-#     sql = "SELECT * FROM leagues;"
-#     results = run_sql(sql)
-
-#     for row in results:
-#         league = League(row['league_name'], row['league_size'], row['id'])
-#         leagues.append(league)
-
-#     return leagues
-
-
-# Return team name 
-# def get_team_name(id):
-#     league = None
-#     sql = "SELECT * FROM leagues WHERE id = %s"
-#     values = [id]
-#     result = run_sql(sql, values)[0]
-
-#     if result is not None:
-#         league = League(result['league_name'], result['league_size'], result['id'] )
-#     return league
-
-
-# Select all teams
+# Select_all() teams
 def select_all():
     teams = []
 

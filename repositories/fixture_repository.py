@@ -25,3 +25,9 @@ def save(fixture):
     results = run_sql( sql, values )
     fixture.id = results[0]['id']
     return fixture
+
+# Delete one fixture by id
+def delete(id):
+    sql = "DELETE FROM fixtures WHERE id = %s"
+    values = [id]
+    run_sql(sql, values)

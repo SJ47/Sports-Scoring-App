@@ -20,15 +20,15 @@ def fixures():
     fixtures = fixture_repository.select_all()
     teams = team_repository.select_all()
 
-    return render_template("fixtures/show.html", fixtures=fixtures, teams = teams)
+    return render_template("fixtures/index.html", fixtures=fixtures, teams = teams)
 
 # Declare a route for the list of fixtures and display them
-@fixtures_blueprint.route("/fixtures/maintenance")
-def fixure_maintenance():
-    fixtures = fixture_repository.select_all()
-    teams = team_repository.select_all()
+# @fixtures_blueprint.route("/fixtures/maintenance")
+# def fixure_maintenance():
+#     fixtures = fixture_repository.select_all()
+#     teams = team_repository.select_all()
 
-    return render_template("fixtures/maintenance.html", fixtures=fixtures, teams = teams)
+#     return render_template("fixtures/maintenance.html", fixtures=fixtures, teams = teams)
 
 # Route for adding fixture to league
 @fixtures_blueprint.route("/fixtures/new", methods=["GET"])
@@ -48,4 +48,11 @@ def create_fixture():
 
     fixture = Fixture(home_team_id, away_team_id, fixture_date, fixture_result, league_id)
     fixture_repository.save(fixture)
+    return redirect('/fixtures')
+
+# DELETE
+# DELETE '/fixtures/<id>'
+@fixtures_blueprint.route("/fixtures/<id>/delete", methods=['POST'])
+def delete_fixture(id):
+    fixture_repository.delete(id)
     return redirect('/fixtures')

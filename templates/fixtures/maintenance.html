@@ -4,16 +4,18 @@
 <h1>Fixture Maintenance</h1>
 <p> <a href="/admin">Exit Fixture Maintenance</a> </p>
 
-<form class="delete-form" action="/fixtures/{{fixtures.id}}/delete" method="POST">
-    <table>
-        <tr>
-            <th>Home Team Name</th>
-            <th>vs</th>
-            <th>Away Team Name</th>
-            <th>Fixture Date</th>
-            <th>Fixture Result</th>
-        </tr>
-        {% for fixture in fixtures %}
+
+<table>
+    <tr>
+        <th>Home Team Name</th>
+        <th>vs</th>
+        <th>Away Team Name</th>
+        <th>Fixture Date</th>
+        <th>Fixture Result</th>
+    </tr>
+
+    {% for fixture in fixtures %}
+    <form class="delete-form" action="/fixtures/{{fixtures.id}}/maintenance/delete" method="POST">
         <tr>
             <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
             <td>{{fixture.home_team_id}}</td>
@@ -22,8 +24,8 @@
             <td>{{fixture.fixture_date}}</td>
             <td>{{fixture.fixture_result}}</td>
         </tr>
-</form>
-{% endfor %}
+    </form>
+    {% endfor %}
 </table>
 
 <br>
