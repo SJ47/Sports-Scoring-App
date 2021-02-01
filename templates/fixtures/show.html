@@ -12,15 +12,14 @@
     </tr>
     {% for fixture in fixtures %}
     <tr>
-        <td>{{fixture.home_team_id}} - {{teams[fixture.home_team_id-1].team_name}}</td>
+        <td>{{teams[fixture.home_team_id-1].team_name}}</td>
 
         <td>vs</td>
-        <td>{{fixture.away_team_id}} - {{teams[fixture.away_team_id-1].team_name}}</td>
+        <td>{{teams[fixture.away_team_id-1].team_name}}</td>
         <td>{{fixture.fixture_date}}</td>
         <td>{{fixture.fixture_result}}</td>
     </tr>
     {% endfor %}
 </table>
-
 
 {% endblock %}
