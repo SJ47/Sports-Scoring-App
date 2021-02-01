@@ -6,11 +6,11 @@
 
 <table>
     <tr>
-        <th>Home Team Name</th>
+        <th></th>
+        <th>Home Team</th>
         <th>vs</th>
-        <th>Away Team Name</th>
+        <th>Away Team</th>
         <th>Fixture Date</th>
-        <th>Fixture Result</th>
     </tr>
 
     {% for fixture in fixtures %}
@@ -18,10 +18,14 @@
         <tr>
             <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
             <td>{{teams[fixture.home_team_id-1].team_name}}</td>
+            {% if fixture.fixture_result %}
+            <td>{{fixture.fixture_result}}</td>
+            {% else %}
             <td>vs</td>
+            {% endif %}
             <td>{{teams[fixture.away_team_id-1].team_name}}</td>
             <td>{{fixture.fixture_date}}</td>
-            <td>{{fixture.fixture_result}}</td>
+            <td><a href="/fixtures/{{fixture.id}}/edit">Edit</a></td>
         </tr>
     </form>
     {% endfor %}

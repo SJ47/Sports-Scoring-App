@@ -3,7 +3,6 @@
 {% block content %}
 <h1>Team Maintenance</h1>
 <p> <a href="/admin">Exit Team Maintenance</a> </p>
-
 {% for team in all_teams %}
 <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
     <button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button>

@@ -71,18 +71,22 @@ def show_team_fixtures(id):
     
 
 # # EDIT
-# # GET 'teams/<id>/edit' 
-# @teams_blueprint.route("/teams/<id>/edit", methods=['GET'])
-# def edit_team(id):
-#     team = team_repository.select(id)
-#     return render_template('teams/edit.html', team=team)
+# # GET 'fixtures/<id>/edit' 
+@fixtures_blueprint.route("/fixtures/<id>/edit", methods=['GET'])
+def edit_fixture(id):
+    fixture = fixture_repository.select(id)
+    return render_template('fixtures/edit.html', fixture = fixture)
     
 # # UPDATE
-# # PUT '/teams/<id>'
-# @teams_blueprint.route("/teams/<id>", methods=['POST'])
-# def update_team(id):
-#     team_name = request.form['team_name']
-#     league_id = 1
-#     team = Team(team_name, league_id, id)
-#     team_repository.update(team)
-#     return redirect('/teams')
+# # PUT '/fixtures/<id>'
+@fixtures_blueprint.route("/fixtures/<id>", methods=['POST'])
+def update_fixture(id):
+    home_team_id = request.form['home_team_id']
+    away_team_id = request.form['away_team_id']
+    fixture_date = request.form['fixture_date']
+    fixture_result = request.form['fixture_result']
+
+    league_id = 1
+    fixture = Fixture(home_team_id, away_team_id, fixture_date, fixture_result, league_id, id)
+    fixture_repository.update(fixture)
+    return redirect('/fixtures')

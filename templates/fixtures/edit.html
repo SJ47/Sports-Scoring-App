@@ -1,8 +1,28 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Edit Fixtures</h1>
-<p>League ID: {{league.id}}</p>
+
+<h3>Update fixture</h3>
+<form action="/fixtures/{{fixture.id}}" method="post">
+    <div>
+        <input type="text" id="home_team_id" value="{{fixture.home_team_id}}" name="home_team_id" required>
+    </div>
+
+    <div>
+        <input type="text" id="away_team_id" value="{{fixture.away_team_id}}" name="away_team_id" required>
+    </div>
+
+    <div>
+        <input type="text" id="fixture_date" value="{{fixture.fixture_date}}" name="fixture_date" required>
+    </div>
+
+    <div>
+        <input type="text" id="fixture_result" value="{{fixture.fixture_result}}" name="fixture_result">
+    </div>
+
+    <button type="submit">Confirm Edit"</button>
+</form>
+
 <br>
 <p> <a href="/leagues">Exit Admin</a> </p>
 
