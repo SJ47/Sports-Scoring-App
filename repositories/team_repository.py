@@ -33,8 +33,8 @@ def delete(id):
 
 # Update team
 def update(team):
-    sql = "UPDATE teams SET (team_name) = (%s) WHERE id = %s"
-    values = [team.team_name, team.id]
+    sql = "UPDATE teams SET (team_name, league_id) = (%s, %s) WHERE id = %s"
+    values = [team.team_name, team.league_id, team.id]
     run_sql(sql, values)
 
 def select(id):
@@ -44,5 +44,5 @@ def select(id):
     result = run_sql(sql, values)[0]
 
     if result is not None:
-        team = Team(result['team_name'], result['league_id'] )
+        team = Team(result['team_name'], result['league_id'], result['id'] )
     return team
