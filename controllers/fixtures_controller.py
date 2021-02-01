@@ -59,3 +59,30 @@ def create_fixture():
 def delete_fixture(id):
     fixture_repository.delete(id)
     return redirect('/fixtures')
+
+# Route for showing a teams fixtures
+@fixtures_blueprint.route("/fixtures/<id>/team_fixtures", methods=["GET"])
+def show_team_fixtures(id):
+    fixtures = fixture_repository.select_all()
+    teams = team_repository.select_all()
+
+    # pdb.set_trace()
+    return render_template("fixtures/team_fixtures.html", fixtures=fixtures, teams=teams, team_name = id)
+    
+
+# # EDIT
+# # GET 'teams/<id>/edit' 
+# @teams_blueprint.route("/teams/<id>/edit", methods=['GET'])
+# def edit_team(id):
+#     team = team_repository.select(id)
+#     return render_template('teams/edit.html', team=team)
+    
+# # UPDATE
+# # PUT '/teams/<id>'
+# @teams_blueprint.route("/teams/<id>", methods=['POST'])
+# def update_team(id):
+#     team_name = request.form['team_name']
+#     league_id = 1
+#     team = Team(team_name, league_id, id)
+#     team_repository.update(team)
+#     return redirect('/teams')

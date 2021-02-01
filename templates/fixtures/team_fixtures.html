@@ -11,17 +11,18 @@
         <th>Fixture Result</th>
     </tr>
     {% for fixture in fixtures %}
+    <!-- <p>Select Team is: {{team_name}} {{teams[fixture.home_team_id-1].team_name}}</p> -->
+    {% if (team_name == teams[fixture.home_team_id-1].team_name) or (team_name ==
+    teams[fixture.away_team_id-1].team_name) %}
     <tr>
-        <td><a
-                href="/fixtures/{{teams[fixture.home_team_id-1].team_name}}/team_fixtures">{{teams[fixture.home_team_id-1].team_name}}</a>
-        </td>
+        <td>{{teams[fixture.home_team_id-1].team_name}}</td>
 
         <td>vs</td>
-        <td><a href="/fixtures/{{teams[fixture.away_team_id-1].team_name}}/team_fixtures">
-                {{teams[fixture.away_team_id-1].team_name}}</a></td>
+        <td>{{teams[fixture.away_team_id-1].team_name}}</td>
         <td>{{fixture.fixture_date}}</td>
         <td>{{fixture.fixture_result}}</td>
     </tr>
+    {% endif %}
     {% endfor %}
 </table>
 
