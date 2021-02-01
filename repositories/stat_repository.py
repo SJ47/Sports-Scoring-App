@@ -101,3 +101,75 @@ def generate_games_won(teams, fixtures):
         # pdb.set_trace() 
     # pdb.set_trace()   
     return games_won_list
+
+## Calculate games drawn
+def generate_games_drawn(teams, fixtures):
+    games_drawn_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out games drawn
+        games_drawn = 0
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None:
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team and home score is drawn add to games_drawn
+                    if team.id == fixture.home_team_id and home_score == away_score:
+                        games_drawn += 1
+                    
+                    # If team is away team and away score is equal add to games_drawn
+                    elif team.id == fixture.away_team_id and away_score == home_score:
+                        games_drawn += 1
+                    else:
+                        pass          
+
+        games_drawn_list.append({team.id:games_drawn})
+
+    return games_drawn_list
+
+## Calculate games lost
+def generate_games_lost(teams, fixtures):
+    games_lost_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out games lost
+        games_lost = 0
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None:
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team and home score is less than add to games_lost
+                    if team.id == fixture.home_team_id and home_score < away_score:
+                        games_lost += 1
+                    
+                    # If team is away team and away score is less than add to games_lost
+                    elif team.id == fixture.away_team_id and away_score < home_score:
+                        games_lost += 1
+                    else:
+                        pass          
+
+        games_lost_list.append({team.id:games_lost})
+
+    return games_lost_list

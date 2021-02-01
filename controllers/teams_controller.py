@@ -56,8 +56,5 @@ def update_team(id):
     team_name = request.form['team_name']
     league_id = 1
     team = Team(team_name, league_id, id)
-    print(request.form)
-    pdb.set_trace()
-    # team.id=14
     team_repository.update(team)
     return redirect('/teams')

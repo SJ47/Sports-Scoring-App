@@ -20,6 +20,8 @@ def leagues():
     fixtures = fixture_repository.select_all()
     stats = stat_repository.generate_stats(teams, fixtures)
     games_won = stat_repository.generate_games_won(teams, fixtures)
-    return render_template("leagues/show.html", teams = teams, stats = stats, games_won = games_won)
+    games_drawn = stat_repository.generate_games_drawn(teams, fixtures)
+    games_lost = stat_repository.generate_games_lost(teams, fixtures)
+    return render_template("leagues/show.html", teams = teams, stats = stats, games_won = games_won, games_drawn = games_drawn, games_lost = games_lost)
 
 

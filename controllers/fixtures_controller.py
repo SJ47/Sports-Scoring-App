@@ -42,8 +42,9 @@ def create_fixture():
     home_team_id = request.form['home_team_id']
     away_team_id = request.form['away_team_id']
     fixture_date = request.form['fixture_date']
+    fixture_result = request.form['fixture_result']
 
-    fixture_result = None
+    # fixture_result = None
     league_id = 1
 
     fixture = Fixture(home_team_id, away_team_id, fixture_date, fixture_result, league_id)
