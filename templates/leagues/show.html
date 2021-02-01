@@ -46,6 +46,9 @@
             <!-- {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}} -->
             {{league_points[team.id-1][team.id]}}
         </td>
+        <td>
+            {{games_form[team.id-1][team.id][-5:]}}
+        </td>
     </tr>
 
     {% endfor %}

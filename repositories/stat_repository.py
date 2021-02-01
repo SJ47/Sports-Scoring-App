@@ -216,6 +216,60 @@ def generate_goals_against(teams, fixtures):
 
     return goals_against_list
 
+### Calculate form of last 5 games
+def generate_games_form(teams, fixtures):
+    games_form_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out form
+        games_form = "-----"
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None or fixture.fixture_result=="":
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team and home score is greater add form-W
+                    if team.id == fixture.home_team_id and home_score > away_score:
+                        games_form+=("W")
+                    
+                    # If team is away team and away score is greater add to form-W
+                    elif team.id == fixture.away_team_id and away_score > home_score:
+                        games_form+=("W")
+
+                    # If team is home team and home score is lose add to form-L
+                    elif team.id == fixture.home_team_id and home_score < away_score:
+                        games_form+=("L")
+                    
+                    # If team is away team and away score is lose add to form-L
+                    elif team.id == fixture.away_team_id and away_score < home_score:
+                        games_form+=("L")
+
+                    # If team is away team and score is a draw add to form-D
+                    elif team.id == fixture.home_team_id and away_score == home_score:
+                        games_form += ("D")
+                        
+                    # If team is away team and score is a draw add to form-D
+                    elif team.id == fixture.away_team_id and away_score == home_score:
+                        games_form+=("D")
+                    else:
+                        pass          
+                
+        games_form_list.append({team.id:games_form})
+                
+        # pdb.set_trace() 
+    # pdb.set_trace()   
+    return games_form_list
+
 
 ## Calculate league points
 def generate_league_points(teams, fixtures):
