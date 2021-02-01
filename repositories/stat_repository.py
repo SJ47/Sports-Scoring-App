@@ -8,6 +8,7 @@ from models.team import Team
 from models.fixture import Fixture
 from models.stat import Stat
 
+# from operator import itemgetter
 
 def generate_stats(teams, fixtures):
     stats = []
@@ -143,3 +144,128 @@ def generate_games_lost(teams, fixtures):
     return games_lost_list
 
 
+## Calculate goals for
+def generate_goals_for(teams, fixtures):
+    goals_for_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out games lost
+        goals_for = 0
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None or fixture.fixture_result=="":
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team add any goals scored to goals_for
+                    if team.id == fixture.home_team_id:
+                        goals_for += home_score
+                    
+                    # If team is away team add any goals scored to goals_for
+                    elif team.id == fixture.away_team_id:
+                        goals_for += away_score
+                    else:
+                        pass          
+
+        goals_for_list.append({team.id:goals_for})
+
+    return goals_for_list
+
+## Calculate goals against
+def generate_goals_against(teams, fixtures):
+    goals_against_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out games lost
+        goals_against = 0
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None or fixture.fixture_result=="":
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team add any goals scored by away team to goals_against
+                    if team.id == fixture.home_team_id:
+                        goals_against += away_score
+                    
+                    # If team is away team add any goals scored by home team to goals_against
+                    elif team.id == fixture.away_team_id:
+                        goals_against += home_score
+                    else:
+                        pass          
+
+        goals_against_list.append({team.id:goals_against})
+
+    return goals_against_list
+
+
+## Calculate league points
+def generate_league_points(teams, fixtures):
+    league_points_list = []
+
+    # Loop through every team
+    for team in teams:
+
+        #### work out points
+        league_points = 0
+        for fixture in fixtures:
+
+            # Pass if scores is none
+            if fixture.fixture_result == None or fixture.fixture_result=="":
+                pass
+            else:
+                # Check if the current team in the loop is involved in the fixture
+                if team.id == fixture.home_team_id or team.id == fixture.away_team_id:
+                    
+                    # Convert scores from strings to integers for calculations
+                    home_score = int(fixture.fixture_result[0:1])
+                    away_score = int(fixture.fixture_result[2:3])
+                    
+                    # If team is home team and home score is greater then add 3 points
+                    if team.id == fixture.home_team_id and home_score > away_score:
+                        league_points += 3
+                    
+                    # If team is away team and away score is greater then add 3 points
+                    elif team.id == fixture.away_team_id and away_score > home_score:
+                        league_points += 3
+
+                    # If team is home team and home score a draw then add 1 point
+                    elif team.id == fixture.home_team_id and home_score == away_score:
+                        league_points += 1
+                    
+                    # If team is away team and away score a draw then add 1 point
+                    elif team.id == fixture.away_team_id and away_score == home_score:
+                        league_points += 1
+
+                    else:
+                        pass          
+
+        league_points_list.append({team.id: league_points})
+
+        # league_points_list = sorted(league_points_list, key=lambda k: k[team.id])
+        # res = {val[0]: val[1] for val in sorted(test_dict.items(), key=lambda x: (-x[1], x[0]))}
+        
+    # res = {val[0] : val[1] for val in sorted(league_points_list, key = lambda x: (-x[1], x[0]))}
+
+
+    # league_points_list=[{1: 8}, {3: 4}, {6: 3}, {7: 3}, {10: 3}, {2: 2}, {4: 1}, {11: 1}, {12: 1}, {5: 0}, {8: 0}, {9: 0}]
+    # pdb.set_trace()
+    return league_points_list

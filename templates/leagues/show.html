@@ -38,12 +38,13 @@
         <td>
             {{games_lost[team.id-1][team.id]}}
         </td>
-        <td>0</td>
-        <td>0</td>
-        <td>0</td>
+        <td>{{goals_for[team.id-1][team.id]}}</td>
+        <td>{{goals_against[team.id-1][team.id]}}</td>
+        <td>{{goals_for[team.id-1][team.id] - goals_against[team.id-1][team.id]}}</td>
         <td>
             <!-- Points from games won and games drawn  -->
-            {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}}
+            <!-- {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}} -->
+            {{league_points[team.id-1][team.id]}}
         </td>
     </tr>
 
