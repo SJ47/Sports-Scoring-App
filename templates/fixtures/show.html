@@ -4,11 +4,11 @@
 <!-- Display teams in the league -->
 <table>
     <tr>
-        <th>Home Team Name</th>
+        <th>Home Team</th>
         <th>vs</th>
-        <th>Away Team Name</th>
+        <th>Away Team</th>
         <th>Fixture Date</th>
-        <th>Fixture Result</th>
+        <!-- <th>Fixture Result</th> -->
     </tr>
     {% for fixture in fixtures %}
     <tr>
@@ -16,11 +16,16 @@
                 href="/fixtures/{{teams[fixture.home_team_id-1].team_name}}/team_fixtures">{{teams[fixture.home_team_id-1].team_name}}</a>
         </td>
 
+        {% if fixture.fixture_result %}
+        <td>{{fixture.fixture_result}}</td>
+        {% else %}
         <td>vs</td>
+        {% endif %}
+
         <td><a href="/fixtures/{{teams[fixture.away_team_id-1].team_name}}/team_fixtures">
                 {{teams[fixture.away_team_id-1].team_name}}</a></td>
         <td>{{fixture.fixture_date}}</td>
-        <td>{{fixture.fixture_result}}</td>
+
     </tr>
     {% endfor %}
 </table>

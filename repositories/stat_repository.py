@@ -19,7 +19,7 @@ def generate_stats(teams, fixtures):
         #### Loop through every fixture and pick out that teams fixtures that have been played (eg. have a result !none)
         games_played = 0
         for fixture in fixtures:
-            if fixture.fixture_date == None:
+            if fixture.fixture_result == None or fixture.fixture_result == "":
                 pass
             else:
                 # Check if the current team in the loop is involved in the fixture
@@ -44,7 +44,7 @@ def generate_games_won(teams, fixtures):
         for fixture in fixtures:
 
             # Pass if scores is none
-            if fixture.fixture_result == None:
+            if fixture.fixture_result == None or fixture.fixture_result=="":
                 pass
             else:
                 # Check if the current team in the loop is involved in the fixture
@@ -82,7 +82,7 @@ def generate_games_drawn(teams, fixtures):
         for fixture in fixtures:
 
             # Pass if scores is none
-            if fixture.fixture_result == None:
+            if fixture.fixture_result == None or fixture.fixture_result=="":
                 pass
             else:
                 # Check if the current team in the loop is involved in the fixture
@@ -118,7 +118,7 @@ def generate_games_lost(teams, fixtures):
         for fixture in fixtures:
 
             # Pass if scores is none
-            if fixture.fixture_result == None:
+            if fixture.fixture_result == None or fixture.fixture_result=="":
                 pass
             else:
                 # Check if the current team in the loop is involved in the fixture
