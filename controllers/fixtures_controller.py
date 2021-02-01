@@ -1,3 +1,4 @@
+import pdb
 # Import flask and render template
 from flask import Flask, render_template, request, redirect
 
@@ -28,6 +29,7 @@ def show_fixtures():
     fixtures = fixture_repository.select_all()
     teams = team_repository.select_all()
 
+    # pdb.set_trace()
     return render_template("fixtures/show.html", fixtures=fixtures, teams = teams)
 
 # Route for adding fixture to league

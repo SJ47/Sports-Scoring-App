@@ -8,10 +8,27 @@ body {
 }
 
 .container {
+    /* border: 5px solid grey; */
     border: 5px solid grey;
     margin: 1em;
-    padding: 1em;
-    /* border-radius: 25px; */
+    border-radius: 25px;
+}
+
+.page-header-1, .page-header-2 {
+    background: grey;
+    /* margin-top: 1em; */
+    
+}
+
+.page-header-1 {
+    margin-top: 0;
+    padding: .5em 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.page-header-2 {
+    padding: .3em;
 }
 
 .nav > ul {
@@ -35,11 +52,8 @@ h1, h2 {
     text-align: center;
 }
 
-
 .btn-links {
     background-color: grey;
-    /* border-radius: 25px; */
-    padding: 1em;
     text-decoration: none;
     color: #fff;
 }
@@ -66,12 +80,24 @@ h1, h2 {
     color: green;
 }
 
+table {
+    margin-left: auto;
+    margin-right: auto;
+    border: 5px solid grey;
+    border-radius: 25px;
+    margin-top: 2em;
+    padding: 1em;
+    /* background-color: rgb(133, 145, 157); */
+}
+
 footer {
     font-size: .75em;
     text-align: center;
-    background: gray;
+    background: grey;
     color: #fff;
     /* border-radius: 25px; */
     margin-top: 3em;
     padding: .3em;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
 }

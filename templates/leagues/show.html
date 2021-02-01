@@ -3,8 +3,8 @@
 {% block content %}
 
 
-
 <!-- Display teams in the league -->
+<br>
 <table>
     <tr>
         <th>Pos</th>
@@ -22,6 +22,7 @@
         <!-- <th>League ID</th> -->
     </tr>
     {% for team in teams %}
+
     <tr>
         <td>{{team.id}}</td>
         <td>{{team.team_name}}</td>
@@ -37,9 +38,16 @@
         <td>
             {{games_lost[team.id-1][team.id]}}
         </td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>
+            <!-- Points from games won and games drawn  -->
+            {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}}
+        </td>
     </tr>
-    {% endfor %}
 
+    {% endfor %}
 
 </table>
 
