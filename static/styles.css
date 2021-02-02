@@ -78,6 +78,10 @@ header {
     color: white;
     text-decoration: none;
 }
+
+.nav-link:hover {
+    color: var(--primary-color);
+}
 /* End Nav Styling  */
 
 /* START of main section styling  */
