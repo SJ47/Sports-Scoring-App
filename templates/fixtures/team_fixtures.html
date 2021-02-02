@@ -2,32 +2,37 @@
 
 {% block content %}
 <!-- Display teams in the league -->
-<table>
-    <tr>
-        <th>Home Team</th>
-        <th>vs</th>
-        <th>Away Team</th>
-        <th>Fixture Date</th>
-        <!-- <th>Fixture Result</th> -->
-    </tr>
-    {% for fixture in fixtures %}
-    <!-- <p>Select Team is: {{team_name}} {{teams[fixture.home_team_id-1].team_name}}</p> -->
-    {% if (team_name == teams[fixture.home_team_id-1].team_name) or (team_name ==
-    teams[fixture.away_team_id-1].team_name) %}
-    <tr>
-        <td>{{teams[fixture.home_team_id-1].team_name}}</td>
+<table class="table-fixtures">
+    <thead>
+        <tr>
+            <th class="table-col-fixture-date">Fixture Date</th>
+            <th>Home Team</th>
+            <th>vs</th>
+            <th>Away Team</th>
 
-        {% if fixture.fixture_result %}
-        <td>{{fixture.fixture_result}}</td>
-        {% else %}
-        <td>vs</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fixture in fixtures %}
+        <!-- <p>Select Team is: {{team_name}} {{teams[fixture.home_team_id-1].team_name}}</p> -->
+        {% if (team_name == teams[fixture.home_team_id-1].team_name) or (team_name ==
+        teams[fixture.away_team_id-1].team_name) %}
+        <tr>
+            <td class="table-col-fixture-date">{{fixture.fixture_date}}</td>
+            <td>{{teams[fixture.home_team_id-1].team_name}}</td>
+
+            {% if fixture.fixture_result %}
+            <td>{{fixture.fixture_result}}</td>
+            {% else %}
+            <td>vs</td>
+            {% endif %}
+
+            <td>{{teams[fixture.away_team_id-1].team_name}}</td>
+
+        </tr>
         {% endif %}
-
-        <td>{{teams[fixture.away_team_id-1].team_name}}</td>
-        <td>{{fixture.fixture_date}}</td>
-    </tr>
-    {% endif %}
-    {% endfor %}
+        {% endfor %}
+    </tbody>
 </table>
 
 {% endblock %}
