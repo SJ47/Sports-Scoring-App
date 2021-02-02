@@ -25,7 +25,7 @@
         <p>{{loop.index0}}</p>
         {% endfor %} -->
         {% for team in teams %}
-        <tr>
+        <tr class="table-league">
             <td>{{loop.index}}</td>
             <td class="table-col-teams">{{team.team_name}}</td>
             <td>
@@ -65,7 +65,7 @@
             <td colspan="11"></td>
         </tr>
         <tr>
-            <td colspan="11">Last updated: Today</td>
+            <td colspan="11">Last updated: {{today}}</td>
         </tr>
         <tr>
             <td colspan="11"></td>

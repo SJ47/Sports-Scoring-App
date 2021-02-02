@@ -1,5 +1,6 @@
 import pdb, operator
 from operator import itemgetter
+from datetime import datetime
 
 # Import flask and render template
 from flask import Flask, render_template
@@ -30,11 +31,14 @@ def leagues():
     games_form = stat_repository.generate_games_form(teams, fixtures)
 
     league_points = stat_repository.generate_league_points(teams, fixtures)
+    today = datetime.now()
+    today = today.strftime("%d/%m/%Y %H:%M:%S")
+
     # sorted_d = sorted(d.items(), key=operator.itemgetter(1))
     # sorted_d = sorted(league_points, key=itemgetter(key))
 
     # pdb.set_trace()
-    return render_template("leagues/show.html", teams = teams, stats = stats, games_won = games_won, games_drawn = games_drawn, games_lost = games_lost, league_points = league_points, goals_for = goals_for, goals_against = goals_against, games_form = games_form)
+    return render_template("leagues/show.html", teams = teams, stats = stats, games_won = games_won, games_drawn = games_drawn, games_lost = games_lost, league_points = league_points, goals_for = goals_for, goals_against = goals_against, games_form = games_form, today = today)
 
     # <!-- Points from games won and games drawn  -->
     # {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}}

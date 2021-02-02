@@ -18,10 +18,17 @@ body {
     text-transform: uppercase;
     font-size: 42px;
     font-weight: 700;
-    background: var(--primary-color);
+    /* background: var(--primary-color); */
     text-align: left;
     margin: 0;
     padding: .3em 1em;
+    color: #ffd230;
+   
+}
+
+header {
+    background-image: url(../static/images/black-white-soccer-ball-on-grass-field-web-header.jpeg);
+    background-position: bottom;
 }
 
 .subtitle {
@@ -38,7 +45,9 @@ body {
     background: var(--secondary-color);
     padding: 1em;
     padding-left: 2.5em;
-
+    background-image: url(../static/images/black-white-soccer-ball-on-grass-field-web-header.jpeg);
+    background-position: bottom;
+    background: rgba(0,0,0,0.55)
 }
 
 .nav > ul {
@@ -46,15 +55,19 @@ body {
     /* justify-content: space-between; */
     margin: 0;
     padding: 0;
-    width: 98%;
+    width: 97%;
 }
 
 .nav > ul > li {
     list-style: none;
     padding-left: 2em;
     padding: 0 .5em;
-    border-right: 1px solid grey;
-    border-left: 1px solid grey;
+    border-right: 3px solid var(--primary-color);
+    /* border-left: 3px solid var(--primary-color); */
+}
+
+.nav > ul > li:first-child, .nav > ul > li:last-child{
+    border-left: 3px solid var(--primary-color);
 }
 
 .nav > ul > li:nth-child(3) {
@@ -70,6 +83,7 @@ body {
 /* START of main section styling  */
 .main {
     margin: 0 3em;
+    width: 60%;
 }
 
 .main-page-section > h4 {
@@ -137,7 +151,6 @@ tr:hover {
 
 tfoot {
     font-weight: lighter;
-    font-style: italic;
     margin-left: 1em;
     text-align: left;
 }
@@ -149,7 +162,11 @@ tfoot > * :hover {
 
 .table-fixtures {
     width: auto;
-    
+}
+
+
+.table-league {
+    border-bottom: 1px dashed lightgrey;
 }
 
 .table-fixtures > tbody > tr > td {
