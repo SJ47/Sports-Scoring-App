@@ -21,33 +21,35 @@
         </tr>
     </thead>
     <tbody>
+        <!-- {% for team in teams %}
+        <p>{{loop.index0}}</p>
+        {% endfor %} -->
         {% for team in teams %}
-
         <tr>
-            <td>{{team.id}}</td>
+            <td>{{loop.index}}</td>
             <td class="table-col-teams">{{team.team_name}}</td>
             <td>
-                {{stats[team.id-1][team.id]}}
+                {{stats[loop.index0][team.id]}}
             </td>
             <td>
-                {{games_won[team.id-1][team.id]}}
+                {{games_won[loop.index0][team.id]}}
             </td>
             <td>
-                {{games_drawn[team.id-1][team.id]}}
+                {{games_drawn[loop.index0][team.id]}}
             </td>
             <td>
-                {{games_lost[team.id-1][team.id]}}
+                {{games_lost[loop.index0][team.id]}}
             </td>
-            <td>{{goals_for[team.id-1][team.id]}}</td>
-            <td>{{goals_against[team.id-1][team.id]}}</td>
-            <td>{{goals_for[team.id-1][team.id] - goals_against[team.id-1][team.id]}}</td>
+            <td>{{goals_for[loop.index0][team.id]}}</td>
+            <td>{{goals_against[loop.index0][team.id]}}</td>
+            <td>{{goals_for[loop.index0][team.id] - goals_against[loop.index0][team.id]}}</td>
             <td class="table-col-points">
                 <!-- Points from games won and games drawn  -->
-                <!-- {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}} -->
-                {{league_points[team.id-1][team.id]}}
+                <!-- {{games_won[loop.index0][team.id]*3 + games_drawn[loop.index0][team.id]*1}} -->
+                {{league_points[loop.index0][team.id]}}
             </td>
             <td class="table-col-form">
-                {{games_form[team.id-1][team.id][-5:]}}
+                {{games_form[loop.index0][team.id][-5:]}}
             </td>
         </tr>
         {% endfor %}

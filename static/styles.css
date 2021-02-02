@@ -89,10 +89,10 @@ body {
 
 table {
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+    /* margin-left: auto;
+    margin-right: auto; */
     /* border: 1px solid var(--secondary-color); */
-    border-radius: 25px;
+    /* border-radius: 25px; */
     margin-top: 2em;
     padding: 1em;
     width: 100%;
@@ -170,6 +170,7 @@ tfoot > * :hover {
     padding-left: 1em;
 }
 
+
 /* Tooltip container */
 .tooltip {
   position: relative;
@@ -208,7 +209,7 @@ tfoot > * :hover {
     margin: 1em;
     padding: 1em 2em;
     text-align: center;
-    border-radius: 25px;
+    /* border-radius: 25px; */
     font-size: 1em;
     border: unset;
     font-weight: bold;
@@ -236,17 +237,34 @@ tfoot > * :hover {
 .trash-button, .edit-button {
     color: var(--secondary-color);
     margin-right: 1em;
-    /* background: transparent; */
+    background: transparent;
+    border: 0;
+    font-size: 1em;
 }
 
 
 .trash-button:hover {
-    color: red;
-    /* background-color: transparent; */
+    color: var(--primary-color);
+    font-size: large;
+    background-color: var(--secondary-color);
 }
 
 .edit-button:hover {
     color: green;
+}
+
+ .edit-icon {
+    color: var(--secondary-color);
+    margin-left: 1em;
+    background: transparent;
+    border: 0;
+    font-size: 1em;
+ }
+
+ .edit-icon:hover {
+    color: var(--primary-color);
+    font-size: 1.2em;
+    background-color: var(--secondary-color);
 }
 
 /* END of button and icon styling  */

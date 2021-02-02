@@ -1,38 +1,41 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Fixture Maintenance</h1>
-<p> <a href="/admin">Exit Fixture Maintenance</a> </p>
+<h1>Administrator Settings: Fixture Maintenance</h1>
+<a class="btn" href="/fixtures/new">Add New Fixture</a>
+<a class="btn" href="/admin">Exit Fixture Maintenance</a>
 
-<table>
-    <tr>
-        <th></th>
-        <th>Home Team</th>
-        <th>vs</th>
-        <th>Away Team</th>
-        <th>Fixture Date</th>
-        <th></th>
-    </tr>
+<table class="table-fixtures">
+    <thead>
+        <tr>
+            <th></th>
+            <th>Fixture Date</th>
+            <th>Home Team</th>
+            <th>vs</th>
+            <th>Away Team</th>
+            <th></th>
+        </tr>
+    </thead>
 
     {% for fixture in fixtures %}
-    <form class="delete-form" action="/fixtures/{{fixture.id}}/delete" method="POST">
-        <tr>
-            <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
-            <td>{{teams[fixture.home_team_id-1].team_name}}</td>
-            {% if fixture.fixture_result %}
-            <td>{{fixture.fixture_result}}</td>
-            {% else %}
-            <td>vs</td>
-            {% endif %}
-            <td>{{teams[fixture.away_team_id-1].team_name}}</td>
-            <td>{{fixture.fixture_date}}</td>
-            <td><a href="/fixtures/{{fixture.id}}/edit">Edit</a></td>
-        </tr>
-    </form>
-    {% endfor %}
+    <tbody>
+        <form class="delete-form" action="/fixtures/{{fixture.id}}/delete" method="POST">
+            <tr>
+                <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
+                <td>{{fixture.fixture_date}}</td>
+                <td>{{teams[fixture.home_team_id-1].team_name}}</td>
+                {% if fixture.fixture_result %}
+                <td>{{fixture.fixture_result}}</td>
+                {% else %}
+                <td>vs</td>
+                {% endif %}
+                <td>{{teams[fixture.away_team_id-1].team_name}}</td>
+                <td><a class="edit-icon" href="/fixtures/{{fixture.id}}/edit"><i class="fas fa-edit fa-1x"></i>Edit</a>
+                </td>
+            </tr>
+        </form>
+        {% endfor %}
+    </tbody>
 </table>
-
-<br>
-<p><a href="/fixtures/new">Add New Fixture</a></p>
 
 {% endblock %}
