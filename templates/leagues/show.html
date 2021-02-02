@@ -2,58 +2,73 @@
 
 {% block content %}
 
-
 <!-- Display teams in the league -->
 <br>
 <table>
-    <tr>
-        <th>Pos</th>
-        <th>Team Name</th>
-        <th>Played</th>
-        <th>Won</th>
-        <th>Drawn</th>
-        <th>Lost</th>
-        <th>For</th>
-        <th>Against</th>
-        <th>GD</th>
-        <th>Points</th>
-        <th>Form</th>
+    <thead>
+        <tr>
+            <th>Pos</th>
+            <th>Team Name</th>
+            <th>Played</th>
+            <th>Won</th>
+            <th>Drawn</th>
+            <th>Lost</th>
+            <th>For</th>
+            <th>Against</th>
+            <th>GD</th>
+            <th>Points</th>
+            <th>Form</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for team in teams %}
 
-        <!-- <th>League ID</th> -->
-    </tr>
-    {% for team in teams %}
-
-    <tr>
-        <td>{{team.id}}</td>
-        <td>{{team.team_name}}</td>
-        <td>
-            {{stats[team.id-1][team.id]}}
-        </td>
-        <td>
-            {{games_won[team.id-1][team.id]}}
-        </td>
-        <td>
-            {{games_drawn[team.id-1][team.id]}}
-        </td>
-        <td>
-            {{games_lost[team.id-1][team.id]}}
-        </td>
-        <td>{{goals_for[team.id-1][team.id]}}</td>
-        <td>{{goals_against[team.id-1][team.id]}}</td>
-        <td>{{goals_for[team.id-1][team.id] - goals_against[team.id-1][team.id]}}</td>
-        <td>
-            <!-- Points from games won and games drawn  -->
-            <!-- {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}} -->
-            {{league_points[team.id-1][team.id]}}
-        </td>
-        <td>
-            {{games_form[team.id-1][team.id][-5:]}}
-        </td>
-    </tr>
-
-    {% endfor %}
-
+        <tr>
+            <td>{{team.id}}</td>
+            <td class="table-col-teams">{{team.team_name}}</td>
+            <td>
+                {{stats[team.id-1][team.id]}}
+            </td>
+            <td>
+                {{games_won[team.id-1][team.id]}}
+            </td>
+            <td>
+                {{games_drawn[team.id-1][team.id]}}
+            </td>
+            <td>
+                {{games_lost[team.id-1][team.id]}}
+            </td>
+            <td>{{goals_for[team.id-1][team.id]}}</td>
+            <td>{{goals_against[team.id-1][team.id]}}</td>
+            <td>{{goals_for[team.id-1][team.id] - goals_against[team.id-1][team.id]}}</td>
+            <td class="table-col-points">
+                <!-- Points from games won and games drawn  -->
+                <!-- {{games_won[team.id-1][team.id]*3 + games_drawn[team.id-1][team.id]*1}} -->
+                {{league_points[team.id-1][team.id]}}
+            </td>
+            <td class="table-col-form">
+                {{games_form[team.id-1][team.id][-5:]}}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="11"></td>
+        </tr>
+        <tr>
+            <td colspan="11"></td>
+        </tr>
+        <tr>
+            <td colspan="11"></td>
+        </tr>
+        <tr>
+            <td colspan="11">Last updated: Today</td>
+        </tr>
+        <tr>
+            <td colspan="11"></td>
+        </tr>
+    </tfoot>
 </table>
-
 
 {% endblock %}

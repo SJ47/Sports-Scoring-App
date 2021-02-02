@@ -107,25 +107,69 @@ body {
 }
 
 
-/* Table styles  */
+/* START of table styling  */
 
 table {
     border-collapse: collapse;
     margin-left: auto;
     margin-right: auto;
-    border: 5px solid grey;
+    /* border: 1px solid var(--secondary-color); */
     border-radius: 25px;
     margin-top: 2em;
     padding: 1em;
-    /* background-color: rgb(133, 145, 157); */
+    width: 100%;
 }
 
-tr:first-child {
-    background: lightblue;
+thead {
+    background: var(--primary-color);
+    border-bottom: 1px solid var(--secondary-color);
     margin: 0;
 }
 
-/* End of table styles  */
+th {
+    text-align: left;
+}
+
+/* Do not affect last updated text line aligned left */
+td:not(:last-of-type) {
+    text-align: center;
+}
+
+td:nth-of-type(2){
+    text-align: left;
+}
+
+/* td:last-of-type {
+    text-align: left;
+} */
+
+.table-col-form {
+    letter-spacing: .5em;
+    text-align: justify;
+    font-family: "Courier";
+}
+
+.table-col-points, .table-col-teams {
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: var(--primary-color);
+}
+
+tfoot {
+    font-weight: lighter;
+    font-style: italic;
+    margin-left: 1em;
+    text-align: left;
+}
+
+tfoot > * :hover {
+    background-color: white;
+}
+
+/* END of table styling  */
+
 
 
 .trash-button, .edit-button {
