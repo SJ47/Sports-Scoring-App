@@ -30,7 +30,7 @@ def leagues():
 
     league_points = stat_repository.generate_league_points(teams, fixtures)
 
-    # pdb.set_trace()
+    pdb.set_trace()
     return render_template("leagues/show.html", teams = teams, stats = stats, games_won = games_won, games_drawn = games_drawn, games_lost = games_lost, league_points = league_points, goals_for = goals_for, goals_against = goals_against, games_form = games_form)
 
 
