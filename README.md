@@ -1,6 +1,5 @@
 # codeclan_week5_project_sports_scoring_app
 
-# codeclan_week5_project_sports_scoring_app
 
 Project Brief
 
@@ -30,9 +29,9 @@ Cloned repo should run under Flask at http://localhost:5000
 <h3>Technologies Used</h3>
 Python, HTML, CSS, Flask, Jinja2, PostgreSQL
 
-<h3>Screenshot of application</h3>
+<h3>Screenshots of application</h3>
 
-<img src="sports_scoring_app/app/static/images/screenshot-start-page.png">
-<img src="sports_scoring_app/app/static/images/screenshot-league-page.png">
-<img src="sports_scoring_app/app/static/images/screenshot-fixtures-page.png">
-<img src="sports_scoring_app/app/static/images/screenshot-maintenance-page.png">
+<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-start-page.png">
+<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-league-page.png">
+<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-fixtures-page.png">
+<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-maintenance-page.png">
