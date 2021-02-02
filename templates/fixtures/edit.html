@@ -2,28 +2,34 @@
 
 {% block content %}
 
-<h3>Update fixture</h3>
+<h2>Administrator Settings: Fixture Maintenance - Update Fixture</h2>
+
 <form action="/fixtures/{{fixture.id}}" method="post">
     <div>
-        <input type="text" id="home_team_id" value="{{fixture.home_team_id}}" name="home_team_id" required>
+        <label class="fixture-input-label" for="home_team_id">Home Team</label>
+        <input class="input-maintenance" type="text" id="home_team_id" value="{{fixture.home_team_id}}"
+            name="home_team_id" required>
     </div>
 
     <div>
-        <input type="text" id="away_team_id" value="{{fixture.away_team_id}}" name="away_team_id" required>
+        <label class="fixture-input-label" for="away_team_id">Away Team</label>
+        <input class="input-maintenance" type="text" id="away_team_id" value="{{fixture.away_team_id}}"
+            name="away_team_id" required>
     </div>
 
     <div>
-        <input type="text" id="fixture_date" value="{{fixture.fixture_date}}" name="fixture_date" required>
+        <label class="fixture-input-label" for="fixture_date">Fixture Date</label>
+        <input class="input-maintenance" type="text" id="fixture_date" value="{{fixture.fixture_date}}"
+            name="fixture_date" required>
     </div>
 
     <div>
-        <input type="text" id="fixture_result" value="{{fixture.fixture_result}}" name="fixture_result">
+        <label class="fixture-input-label" for="fixture_result">Fixture Result</label>
+        <input class="input-maintenance" type="text" id="fixture_result" value="{{fixture.fixture_result}}"
+            name="fixture_result">
     </div>
 
-    <button type="submit">Confirm Edit"</button>
+    <button class="btn" type="submit">Confirm Edit"</button>
+    <a class="btn" href="/fixtures">Cancel</a>
 </form>
-
-<br>
-<p> <a href="/leagues">Exit Admin</a> </p>
-
 {% endblock %}

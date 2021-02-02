@@ -267,7 +267,28 @@ tfoot > * :hover {
     background-color: var(--secondary-color);
 }
 
+
+
 /* END of button and icon styling  */
+
+/* START of form and input styling  */
+
+
+.fixture-input-label {
+    padding-left: 1em;
+}
+
+
+.input-maintenance {
+    display: grid;
+    padding: .5em;
+    margin-left: 1.2em;
+    margin-bottom: .5em;
+
+}
+
+/* END of form and input styling  */
+
 
 /* START of footer styling  */
 footer {

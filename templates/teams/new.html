@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h3>Add team to league</h3>
+<h2>Administrator Settings: Team Maintenance - Add Team</h2>
 <form action="/teams" method="post">
-    <input type="text" id="team_name" name="team_name" placeholder="Team name" required autofocus>
+    <input class="input-maintenance" type="text" id="team_name" name="team_name" placeholder="Team name" required
+        autofocus>
     <br>
 
-    <input type="submit" value="Add Team">
+    <input class="btn" type="submit" value="Add Team">
 </form>
 
+<a class="btn" href="/teams">Cancel</a>
 <br>
-<p> <a href="/leagues">Exit Admin</a> </p>
+<!-- <p> <a href="/leagues">Exit Admin</a> </p> -->
 {% endblock %}
