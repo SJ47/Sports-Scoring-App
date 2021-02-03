@@ -75,7 +75,13 @@ def show_team_fixtures(id):
 @fixtures_blueprint.route("/fixtures/<id>/edit", methods=['GET'])
 def edit_fixture(id):
     fixture = fixture_repository.select(id)
-    return render_template('fixtures/edit.html', fixture = fixture)
+
+# changes to help add team names in edit fields instead of team IDs
+    home_team = team_repository.select(fixture.home_team_id)
+    away_team = team_repository.select(fixture.away_team_id)
+# end changes
+#   
+    return render_template('fixtures/edit.html', fixture = fixture, home_team = home_team, away_team = away_team)
     
 # # UPDATE
 # # PUT '/fixtures/<id>'

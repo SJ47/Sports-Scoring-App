@@ -7,12 +7,15 @@
 <form action="/fixtures/{{fixture.id}}" method="post">
     <div>
         <label class="fixture-input-label" for="home_team_id">Home Team</label>
+
+        <!-- <input class="input-maintenance" type="text" id="home_team_id" value="{{home_team.team_name}}" -->
         <input class="input-maintenance" type="text" id="home_team_id" value="{{fixture.home_team_id}}"
             name="home_team_id" required>
     </div>
 
     <div>
         <label class="fixture-input-label" for="away_team_id">Away Team</label>
+        <!-- <input class="input-maintenance" type="text" id="home_team_id" value="{{away_team.team_name}}" -->
         <input class="input-maintenance" type="text" id="away_team_id" value="{{fixture.away_team_id}}"
             name="away_team_id" required>
     </div>

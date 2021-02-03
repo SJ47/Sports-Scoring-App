@@ -88,12 +88,12 @@ header {
     /* width: 60%; */
 }
 
-.main-page-section > h4 {
-    margin-bottom: 0;
-    padding-bottom: 0;
+.main-page-section > h4 > span {
     border-bottom: 5px solid var(--primary-color);;
-    width: 150px;
+    border-bottom-width: .5em;
+    border-bottom-right-radius: 10px;
 }
+
 
 .main-page-section > p {
     margin-top: .5em;
@@ -157,11 +157,9 @@ tfoot > * :hover {
     background-color: white;
 }
 
-
 .table-fixtures {
     width: auto;
 }
-
 
 .table-league {
     border-bottom: 1px dashed lightgrey;
@@ -169,7 +167,6 @@ tfoot > * :hover {
 
 .table-fixtures > tbody > tr > td {
     text-align: left;
-
 }
 
 .table-fixtures > thead > tr> th {
@@ -184,9 +181,9 @@ tfoot > * :hover {
 .table-col-fixture-date {
     padding-left: 1em;
 }
+/* END of table styling  */
 
-
-/* Tooltip container */
+/* START of tooltip styling  */
 .tooltip {
   position: relative;
   display: inline-block;
@@ -211,7 +208,7 @@ tfoot > * :hover {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-/* END of table styling  */
+/* END of tooltip styling  */
 
 
 /* START of button and icon styling  */
@@ -221,7 +218,6 @@ tfoot > * :hover {
     margin: 1em;
     padding: 1em 2em;
     text-align: center;
-    /* border-radius: 25px; */
     font-size: 1em;
     border: unset;
     font-weight: bold;
