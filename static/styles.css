@@ -52,7 +52,6 @@ header {
 
 .nav > ul {
     display: flex;
-    /* justify-content: space-between; */
     margin: 0;
     padding: 0;
     width: 97%;
@@ -63,7 +62,6 @@ header {
     padding-left: 2em;
     padding: 0 .5em;
     border-right: 3px solid var(--primary-color);
-    /* border-left: 3px solid var(--primary-color); */
 }
 
 .nav > ul > li:first-child, .nav > ul > li:last-child{
@@ -87,7 +85,7 @@ header {
 /* START of main section styling  */
 .main {
     margin: 0 3em;
-    width: 60%;
+    /* width: 60%; */
 }
 
 .main-page-section > h4 {
@@ -134,10 +132,6 @@ td:not(:last-of-type) {
 td:nth-of-type(2){
     text-align: left;
 }
-
-/* td:last-of-type {
-    text-align: left;
-} */
 
 .table-col-form {
     letter-spacing: .5em;
@@ -196,7 +190,7 @@ tfoot > * :hover {
 .tooltip {
   position: relative;
   display: inline-block;
-  border-bottom: 1px dotted var(--secondary-color); /* If you want dots under the hoverable text */
+  border-bottom: 1px dotted var(--secondary-color); 
 }
 
 /* Tooltip text */
@@ -217,13 +211,10 @@ tfoot > * :hover {
 .tooltip:hover .tooltiptext {
   visibility: visible;
 }
-
-
 /* END of table styling  */
 
 
 /* START of button and icon styling  */
-
 .btn {
     background: var(--primary-color);
     color: var(--secondary-color);
@@ -247,13 +238,11 @@ tfoot > * :hover {
     cursor: pointer;
 }
 
-
 .btn-links {
     text-decoration: none;
     color: white;
     color: var(--secondary-color);
 }
-
 
 .trash-button, .edit-button {
     color: var(--secondary-color);
@@ -262,7 +251,6 @@ tfoot > * :hover {
     border: 0;
     font-size: 1em;
 }
-
 
 .trash-button:hover {
     color: var(--primary-color);
@@ -287,27 +275,21 @@ tfoot > * :hover {
     font-size: 1.2em;
     background-color: var(--secondary-color);
 }
-
-
-
 /* END of button and icon styling  */
 
+
 /* START of form and input styling  */
-
-
 .fixture-input-label {
     padding-left: 1em;
 }
-
 
 .input-maintenance {
     display: grid;
     padding: .5em;
     margin-left: 1.2em;
     margin-bottom: .5em;
-
+    font-size: 1em;
 }
-
 /* END of form and input styling  */
 
 

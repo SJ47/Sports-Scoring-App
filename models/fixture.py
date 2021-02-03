@@ -7,11 +7,4 @@ class Fixture:
         self.league_id = league_id
         self.id = id
 
-    def add_fixture(self):
-        pass
-
-    def remove_fixture(self):
-        pass
-
-    def add_result(self):
-        pass
+ 
