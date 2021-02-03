@@ -79,15 +79,29 @@ INSERT INTO players (first_name, last_name, team_id, goals_scored, yellow_cards,
 INSERT INTO players (first_name, last_name, team_id, goals_scored, yellow_cards, red_cards) VALUES ('Hamplayer', 'Four', 12, 0, 0, 0);
 
 --  Seed some sample fixtures into team with correct team_home_id, team_away_id and league_id
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (1, 2, '20-01-2021', '2-0', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (3, 4, '20-01-2021', '1-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (1, 2, '01-01-2021', '2-0', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (1, 3, '08-01-2021', '3-0', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (4, 1, '15-01-2021', '1-2', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (1, 5, '22-01-2021', '5-2', 1);
+
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (2, 4, '01-01-2021', '2-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (5, 2, '08-01-2021', '1-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (2, 12, '15-01-2021', '2-1', 1);
+
+
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (3, 4, '01-01-2021', '1-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (3, 11, '08-01-2021', '1-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (8, 3, '15-01-2021', '1-1', 1);
+
+
 INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (5, 6, '20-01-2021', '2-3', 1);
 INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (7, 8, '20-01-2021', '1-0', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (9, 10, '20-01-2021', '0-1', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (11, 12, '20-01-2021', '2-2', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (1, 3, '20-01-2021', '3-0', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (2, 4, '20-01-2021', '1-2', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (9, 10, '20-01-2021', '1-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (3, 12, '20-01-2021', '3-2', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (4, 11, '20-01-2021', '3-2', 1);
+
+
 INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (5, 7, '20-01-2021', '2-0', 1);
 INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (6, 8, '20-01-2021', '1-1', 1);
-INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (9, 11, '20-01-2021', '2-1', 1);
+INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (9, 11, '20-01-2021', '1-1', 1);
 INSERT INTO fixtures (home_team_id, away_team_id, fixture_date, fixture_result, league_id) VALUES (10, 12, '20-01-2021', '3-3', 1);
