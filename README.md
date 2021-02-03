@@ -31,7 +31,7 @@ Python, HTML, CSS, Flask, Jinja2, PostgreSQL
 
 <h3>Screenshots of application</h3>
 
-<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-start-page.png">
-<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-league-page.png">
-<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-fixtures-page.png">
-<img src="codeclan_week5_project_sports_scoring_app/static/images/screenshot-maintenance-page.png">
+<img src="https://github.com/SJ47/codeclan_week5_project_sports_scoring_app/blob/main/static/images/screenshot-start-page.png">
+<img src="https://github.com/SJ47/codeclan_week5_project_sports_scoring_app/blob/main/static/images/screenshot-league-page.png">
+<img src="https://github.com/SJ47/codeclan_week5_project_sports_scoring_app/blob/main/static/images/screenshot-fixtures-page.png">
+<img src="https://github.com/SJ47/codeclan_week5_project_sports_scoring_app/blob/main/static/images/screenshot-maintenance-page.png">
