@@ -35,7 +35,8 @@ def show_fixtures():
 # Route for adding fixture to league
 @fixtures_blueprint.route("/fixtures/new", methods=["GET"])
 def new_fixture():
-    return render_template("fixtures/new.html")
+    teams = team_repository.select_all()
+    return render_template("fixtures/new.html", teams = teams)
 
 # CREATE
 # POST '/fixtures'
@@ -81,7 +82,8 @@ def edit_fixture(id):
     away_team = team_repository.select(fixture.away_team_id)
 # end changes
 #   
-    return render_template('fixtures/edit.html', fixture = fixture, home_team = home_team, away_team = away_team)
+    teams = team_repository.select_all()
+    return render_template('fixtures/edit.html', fixture = fixture, home_team = home_team, away_team = away_team, teams = teams)
     
 # # UPDATE
 # # PUT '/fixtures/<id>'
