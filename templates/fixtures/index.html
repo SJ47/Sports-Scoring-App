@@ -22,7 +22,7 @@
         <form class="delete-form" action="/fixtures/{{fixture.id}}/delete" method="POST">
             <tr>
                 <td><button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button></td>
-                <td>{{fixture.fixture_date}}</td>
+                <td>{{fixture.fixture_date.strftime("%d-%b-%y")}}</td>
                 <td>{{teams[fixture.home_team_id-1].team_name}}</td>
                 {% if fixture.fixture_result %}
                 <td>{{fixture.fixture_result}}</td>

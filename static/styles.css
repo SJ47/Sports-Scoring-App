@@ -285,6 +285,7 @@ tfoot > * :hover {
     margin-left: 1.2em;
     margin-bottom: .5em;
     font-size: 1em;
+    /* width: 200px; */
 }
 /* END of form and input styling  */
 
