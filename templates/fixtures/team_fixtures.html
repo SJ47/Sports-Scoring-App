@@ -18,7 +18,7 @@
         {% if (team_name == teams[fixture.home_team_id-1].team_name) or (team_name ==
         teams[fixture.away_team_id-1].team_name) %}
         <tr>
-            <td class="table-col-fixture-date">{{fixture.fixture_date}}</td>
+            <td class="table-col-fixture-date">{{fixture.fixture_date.strftime("%d-%b-%y")}}</td>
             <td>{{teams[fixture.home_team_id-1].team_name}}</td>
 
             {% if fixture.fixture_result %}

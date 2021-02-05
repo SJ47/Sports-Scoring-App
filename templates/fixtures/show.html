@@ -16,7 +16,7 @@
     <tbody>
         {% for fixture in fixtures %}
         <tr>
-            <td class="table-col-fixture-date">{{fixture.fixture_date}}</td>
+            <td class="table-col-fixture-date">{{fixture.fixture_date.strftime("%d-%b-%y")}}</td>
             <td class="table-col-teams table-col-teams__clickable tooltip"><a
                     href="/fixtures/{{teams[fixture.home_team_id-1].team_name}}/team_fixtures">{{teams[fixture.home_team_id-1].team_name}}</a>
                 <span class="tooltiptext">View teams fixtures</span>
