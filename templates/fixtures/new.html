@@ -2,35 +2,66 @@
 
 {% block content %}
 <h2>Administrator Settings: Fixture Maintenance - Add Fixture</h2>
+
 <form action="/fixtures" method="post">
+    <table class="fixture-layout">
+        <thead>
+            <tr>
+                <th>
+                    <label class="fixture-input-label" for="home_team_id">Home Team</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-result-input-label" for="fixture_result">Result</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-away-team-input-label" for="away_team_id">Away
+                        Team</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-date-input-label" for="fixture_date">Fixture Date</label>
+                </th>
+            </tr>
+        </thead>
 
-    <label class="fixture-input-label" for="home_team_id">Home Team</label>
-    <select class="input-maintenance" name="home_team_id" id="home_team_id">
-        <option value="" selected disabled hidden>Select Team</option>
-        {% for team in teams %}
-        {{team.team_name}}
-        <option value="{{team.id}}">{{team.team_name}}</option>
-        {% endfor %}
-    </select>
+        <tbody>
+            <tr class="fixture-hover">
+                <td></td>
+            </tr>
+            <tr class="fixture-hover">
+                <td>
+                    <select class="input-maintenance" name="home_team_id" id="home_team_id">
+                        <option value="" selected disabled hidden>Select Team</option>
+                        {% for team in teams %}
+                        {{team.team_name}}
+                        <option value="{{team.id}}">{{team.team_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
 
-    <label class="fixture-input-label" for="away_team_id">Away Team</label>
-    <select class="input-maintenance" name="away_team_id" id="away_team_id">
-        <option value="" selected disabled hidden>Select Team</option>
-        {% for team in teams %}
-        {{team.team_name}}
-        <option value="{{team.id}}">{{team.team_name}}</option>
-        {% endfor %}
-    </select>
+                <td>
+                    <input class="input-maintenance" type="text" id="fixture_result" name="fixture_result"
+                        placeholder=" - ">
+                </td>
 
-    <label class="fixture-input-label" for="fixture_date">Fixture Date</label>
-    <input class="input-maintenance" type="date" id="fixture_date" name="fixture_date" placeholder="fixture_date"
-        required>
+                <td>
+                    <select class="input-maintenance" name="away_team_id" id="away_team_id">
+                        <option value="" selected disabled hidden>Select Team</option>
+                        {% for team in teams %}
+                        {{team.team_name}}
+                        <option value="{{team.id}}">{{team.team_name}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
 
-    <label class="fixture-input-label" for="fixture_result">Fixture Result</label>
-    <input class="input-maintenance" type="text" id="fixture_result" name="fixture_result" placeholder="result">
-
+                <td>
+                    <input class="input-maintenance" type="date" id="fixture_date" name="fixture_date"
+                        placeholder="fixture_date" required>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <input class="btn" type="submit" value="Add Fixture">
     <a class="btn" href="/fixtures">Cancel</a>
-</form>
 
+</form>
 {% endblock %}
