@@ -5,47 +5,67 @@
 <h2>Administrator Settings: Fixture Maintenance - Update Fixture</h2>
 
 <form action="/fixtures/{{fixture.id}}" method="post">
-    <div>
-        <label class="fixture-input-label" for="home_team_id">Home Team</label>
-        <select class="input-maintenance" name="home_team_id" id="home_team_id">
-            {% for team in teams %}
+    <table class="fixture-layout">
+        <thead>
+            <tr>
+                <th>
+                    <label class="fixture-input-label" for="home_team_id">Home Team</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-result-input-label" for="fixture_result">Result</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-away-team-input-label" for="away_team_id">Away
+                        Team</label>
+                </th>
+                <th>
+                    <label class="fixture-input-label fixture-date-input-label" for="fixture_date">Fixture Date</label>
+                </th>
+            </tr>
+        </thead>
 
-            {% if team.id == fixture.home_team_id %}
-            <option value="{{team.id}}" selected>{{team.team_name}}</option>
-            {% else %}
-            <option value="{{team.id}}">{{team.team_name}}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
-    </div>
+        <tbody>
+            <tr class="fixture-hover">
+                <td></td>
+            </tr>
+            <tr class="fixture-hover">
+                <td>
+                    <select class="input-maintenance" name="home_team_id" id="home_team_id">
+                        {% for team in teams %}
 
-    <div>
-        <label class="fixture-input-label" for="away_team_id">Away Team</label>
-        <select class="input-maintenance" name="away_team_id" id="away_team_id">
-            {% for team in teams %}
-            {% if team.id == fixture.away_team_id %}
-            <option value="{{team.id}}" selected>{{team.team_name}}</option>
-            {% else %}
-            <option value="{{team.id}}">{{team.team_name}}</option>
-            {% endif %}
-            {% endfor %}
-        </select>
+                        {% if team.id == fixture.home_team_id %}
+                        <option value="{{team.id}}" selected>{{team.team_name}}</option>
+                        {% else %}
+                        <option value="{{team.id}}">{{team.team_name}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </td>
 
-    </div>
+                <td>
+                    <input class="input-maintenance" type="text" id="fixture_result" value="{{fixture.fixture_result}}"
+                        name="fixture_result" placeholder=" - ">
+                </td>
 
-    <div>
-        <label class="fixture-input-label" for="fixture_date">Fixture Date</label>
-        <input class="input-maintenance" type="date" id="fixture_date" name="fixture_date"
-            value="{{fixture.fixture_date}}" required>
+                <td>
+                    <select class="input-maintenance" name="away_team_id" id="away_team_id">
+                        {% for team in teams %}
+                        {% if team.id == fixture.away_team_id %}
+                        <option value="{{team.id}}" selected>{{team.team_name}}</option>
+                        {% else %}
+                        <option value="{{team.id}}">{{team.team_name}}</option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
+                </td>
 
-    </div>
-
-    <div>
-        <label class="fixture-input-label" for="fixture_result">Fixture Result</label>
-        <input class="input-maintenance" type="text" id="fixture_result" value="{{fixture.fixture_result}}"
-            name="fixture_result">
-    </div>
-
+                <td>
+                    <input class="input-maintenance" type="date" id="fixture_date" name="fixture_date"
+                        value="{{fixture.fixture_date}}" required>
+                </td>
+            </tr>
+        </tbody>
+    </table>
     <button class="btn" type="submit">Confirm Edit</button>
     <a class="btn" href="/fixtures">Cancel</a>
 </form>

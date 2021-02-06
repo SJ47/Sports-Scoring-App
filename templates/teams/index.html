@@ -4,13 +4,21 @@
 <h1>Administrator Settings: Team Maintenance</h1>
 <a class="btn" href="/teams/new">Add Team to League</a>
 <a class="btn" href="/admin">Exit Team Maintenance</a>
-{% for team in all_teams %}
-<form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
-    <button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button>
+<table>
+    <tbody>
+        {% for team in all_teams %}
+        <tr>
+            <td>
+                <form class="delete-form" action="/teams/{{team.id}}/delete" method="POST">
+                    <button class="trash-button"><i class="fas fa-trash fa-1x" aria-hidden="true"> </i></button>
 
-    {{team.team_name}} <a class="edit-icon" href="/teams/{{team.id}}/edit"><i class="fas fa-edit fa-1x"></i>edit</a>
-</form>
-{% endfor %}
-
+                    {{team.team_name}} <a class="edit-icon" href="/teams/{{team.id}}/edit"><i
+                            class="fas fa-edit fa-1x"></i>edit</a>
+                </form>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 
 {% endblock %}
