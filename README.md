@@ -1,5 +1,4 @@
-# codeclan_week5_project_sports_scoring_app
-
+# Sports Scoring App
 
 Project Brief
 
@@ -25,6 +24,7 @@ Be able to edit matches and update results.
 
 Running Instructions
 Cloned repo should run under Flask at http://localhost:5000
+A version running and deployed to Heroku can be located at https://sports-scoring-app.herokuapp.com
 
 <h3>Technologies Used</h3>
 Python, HTML, CSS, Flask, Jinja2, PostgreSQL
