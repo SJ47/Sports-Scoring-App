@@ -23,7 +23,7 @@ Add a team form indicator column in table for last 5 matches (WWWLLDD).\
 Be able to edit matches and update results.
 
 Running Instructions\
-Cloned repo should run under Flask at http://localhost:5000\
+Cloned repo should run under Flask at http://localhost:5000 \
 A version running and deployed to Heroku can be located at https://sports-scoring-app.herokuapp.com
 
 <h3>Technologies Used</h3>
